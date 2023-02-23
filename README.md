@@ -4,6 +4,8 @@
 ## About
 This tool help you to scan all IP ranges of Cloudflare to find clean and working ones.
 
+Inspired by [Morteza CFScanner](https://github.com/MortezaBashsiz/CFScanner)
+
 ## Features
 * Scan all Cloudflare IP ranges and find fastest IP addresses.
 * Save scan results and ability to scan in previous results.
@@ -33,7 +35,7 @@ https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0
 ```
 
 ## How to use
-Just download latest release form `release` section and extract zip file to disk, then run `WinCFScan.exe`.
+Just download latest release from `release` section and extract zip file to disk, then run `WinCFScan.exe`.
 
 ## Other notes
 * In `Scan Results` tab you can right click on an IP and **Copy** IP address and also you can click on `Test this IP address` menu to test just one IP address.
