@@ -52,6 +52,6 @@ If you want to build and compile it yourself then download source code to your p
 Then you can build it from Build menu. After that you **must** copy content of `assets` folder into executable folder which usually is something like `bin/Debug/net6.0-windows`.
 
 # Disclaimer
-Use this tool on your own risk, there is no guarantee! 
+Use this tool at your own risk, there is no guarantee! 
 
 Have fun and give us feedback.
