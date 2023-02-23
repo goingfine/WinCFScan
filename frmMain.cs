@@ -24,10 +24,17 @@ namespace WinCFScan
         {
             InitializeComponent();
 
-            // load congigs
+            // load configs
             configManager = new();
             if(!configManager.isConfigValid()) {
-                addTextLog("App config file is not valid!");
+
+                addTextLog("App config is not valid! we can not continue.");
+                
+                if(configManager.errorMessage != "")
+                {
+                    addTextLog(configManager.errorMessage);
+                }
+
                 isAppCongigValid = false;
             }
 
@@ -515,7 +522,9 @@ namespace WinCFScan
             listCFIPList.BeginUpdate();
             isUpdatinglistCFIP = true;
             foreach (ListViewItem item in listCFIPList.Items)
+            {
                 item.Checked = isChecked;
+            }
             listCFIPList.EndUpdate();
             isUpdatinglistCFIP = false;
             updateCFIPListStatusText();

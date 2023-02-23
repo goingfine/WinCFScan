@@ -17,6 +17,9 @@ namespace WinCFScan.Classes.Config
         protected AppConfig? appConfig;
         protected RealConfig? realConfig;
 
+        public string errorMessage { get; set; } = "";
+        protected bool loadedOK = true;
+
         public static ConfigManager? Instance { get; private set; }
 
         public ConfigManager()
@@ -51,14 +54,25 @@ namespace WinCFScan.Classes.Config
                 // load v2ray config template
                 if (!File.Exists(v2rayTemplateConfigFileName))
                 {
+                    errorMessage = "v2ray template config file is not exists at 'v2ray-config/config.json.template'";
+                    loadedOK = false;
                     return false;
                 }
 
                 v2rayConfigTemplate = File.ReadAllText(v2rayTemplateConfigFileName);
 
+                // check existance of v2ray.exe
+                if (!File.Exists("v2ray.exe"))
+                {
+                    errorMessage = "v2ray.exe in not exists in app directory.";
+                    loadedOK = false;
+                    return false;
+                }
+
             }
             catch(Exception ex)
             {
+                errorMessage = ex.Message;
                 return false;
             }
 
@@ -67,7 +81,7 @@ namespace WinCFScan.Classes.Config
 
         public bool isConfigValid()
         {
-            if(appConfig != null && appConfig.isConfigValid() && v2rayConfigTemplate != null)
+            if(appConfig != null && appConfig.isConfigValid() && v2rayConfigTemplate != null && loadedOK)
             {
                 return true;
             }
