@@ -2,6 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Net;
+using System.Security.Policy;
 using WinCFScan.Classes;
 using WinCFScan.Classes.Config;
 using WinCFScan.Classes.HTTPRequest;
@@ -12,6 +13,7 @@ namespace WinCFScan
 {
     public partial class frmMain : Form
     {
+        private const string ourGitHubUrl = "https://github.com/goingfine/WinCFScan";
         ConfigManager configManager;
         bool oneTimeChecked = false; // config checked once?
         ScanEngine scanEngine;
@@ -560,6 +562,20 @@ namespace WinCFScan
                     Thread.Sleep(100);
                 } while (scanEngine.progressInfo.isScanRunning);
 
+            }
+        }
+
+        private void linkGithub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                ProcessStartInfo sInfo = new ProcessStartInfo(ourGitHubUrl) { UseShellExecute = true };
+                Process.Start(sInfo);
+            }
+            catch (Exception)
+            {
+                addTextLog($"Visit us on {ourGitHubUrl}");
+                throw;
             }
         }
     }

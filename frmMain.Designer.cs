@@ -39,6 +39,7 @@
             this.lblLastIPRange = new System.Windows.Forms.Label();
             this.timerProgress = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linkGithub = new System.Windows.Forms.LinkLabel();
             this.btnCopyFastestIP = new System.Windows.Forms.Button();
             this.txtFastestIP = new System.Windows.Forms.TextBox();
             this.lblFastestIP = new System.Windows.Forms.Label();
@@ -171,6 +172,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.linkGithub);
             this.groupBox1.Controls.Add(this.btnCopyFastestIP);
             this.groupBox1.Controls.Add(this.txtFastestIP);
             this.groupBox1.Controls.Add(this.lblFastestIP);
@@ -188,6 +190,21 @@
             this.groupBox1.Size = new System.Drawing.Size(780, 120);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // linkGithub
+            // 
+            this.linkGithub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkGithub.Image = global::WinCFScan.Properties.Resources.github_mark24;
+            this.linkGithub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.linkGithub.Location = new System.Drawing.Point(694, 85);
+            this.linkGithub.Name = "linkGithub";
+            this.linkGithub.Size = new System.Drawing.Size(71, 23);
+            this.linkGithub.TabIndex = 12;
+            this.linkGithub.TabStop = true;
+            this.linkGithub.Text = "GitHub";
+            this.linkGithub.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.linkGithub, "Visit us on GitHub.com");
+            this.linkGithub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkGithub_LinkClicked);
             // 
             // btnCopyFastestIP
             // 
@@ -545,5 +562,6 @@
         private Button btnSelectAllIPRanges;
         private Label lblCFIPListStatus;
         private Label lblPrevListTotalIPs;
+        private LinkLabel linkGithub;
     }
 }
