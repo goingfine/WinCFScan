@@ -166,7 +166,7 @@ namespace WinCFScan.Classes
                 string frUrl = "https://" + ConfigManager.Instance.getAppConfig()?.frontDomain;
                 var html = client.GetStringAsync(frUrl).Result;
 
-                return html.Contains("Working");
+                return true;
             } 
             catch (Exception ex)
             {
