@@ -1,4 +1,4 @@
-# Follow us here
+# Continue here
 This repo is marked as archive and we continue this application in here:
 
 [Morteza CFScanner](https://github.com/MortezaBashsiz/CFScanner)
