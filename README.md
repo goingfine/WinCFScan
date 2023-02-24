@@ -1,3 +1,10 @@
+# Follow us here
+This repo is marked as archive and we continue this application in here:
+
+[Morteza CFScanner](https://github.com/MortezaBashsiz/CFScanner)
+
+See Windows section on that repo.
+
 # Cloudflare IP scan on Windows
 ![screen](https://user-images.githubusercontent.com/126115050/220948247-711c972c-0b86-4131-82c1-437e461daa6e.png)
 
